@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Projet_Kolani.Models.Proprietaire>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Creation D'un Nouveau Propriétaire</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Proprietaire </a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProprietaireId" class="btn btn-warning">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.ProprietaireId" class="btn btn-info">Détail</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProprietaireId" class="btn btn-danger">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

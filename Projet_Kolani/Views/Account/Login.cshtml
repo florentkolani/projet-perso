@@ -1,0 +1,118 @@
+﻿@page
+@model Login
+
+@{
+    Layout = "_LayoutLogin";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            padding-top: 20px;
+            background-color: #f8f9fa; /* Light Gray */
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: #ffffff; /* White */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0, 0, 0.1);
+            margin: auto; /* Center the container */
+            margin-top: 50px; /* Add space from the top */
+        }
+
+        body {
+            background-color: #f8f9fa; /* Light Gray */
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #007bff; /* Blue */
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #343a40; /* Dark Gray */
+        }
+
+        label {
+            color: #495057; /* Gray */
+        }
+
+        .form-control {
+            border-color: #ced4da; /* Light Gray */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Blue */
+            border-color: #007bff; /* Blue */
+            color: #ffffff; /* White */
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3; /* Darker Blue */
+                border-color: #0056b3; /* Darker Blue */
+            }
+
+        .text-danger {
+            color: #dc3545; /* Red */
+        }
+
+        .test {
+            margin-top: 10px;
+            background-color: #f8d7da; /* Light Red */
+            color: #721c24; /* Dark Red */
+            font-weight: bold; /* Mise en gras */
+            color: red; /* Couleur rouge */
+            list-style: none; /* Style non listé */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-message">
+            Bienvenue sur votre site de Gestion de Flotte
+        </div>
+
+        <h2>Login</h2>
+
+        <form asp-action="Login" asp-controller="Account" method="post">
+            <div asp-validation-summary="All" class="test"></div>
+            <div class="form-group">
+                <label for="UserName">Username</label>
+                <input type="text" id="UserName" name="UserName" class="form-control" />
+                <span name="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" id="Password" name="Password" class="form-control" />
+                <span name="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

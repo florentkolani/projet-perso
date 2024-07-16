@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Projet_Kolani.Models.Engin>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Creation d'un Engin</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Engin </a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Immatriculation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categorie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CotationAssurance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MajorationEconomat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proprietaire)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Immatriculation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CotationAssurance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MajorationEconomat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proprietaire.ProprietaireId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EnginId" class="btn btn-warning">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.EnginId" class="btn btn-info">Détail</a> |
+                <a asp-action="Delete" asp-route-id="@item.EnginId" class="btn btn-danger">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

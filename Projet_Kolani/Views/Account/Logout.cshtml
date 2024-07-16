@@ -1,0 +1,17 @@
+﻿@page
+@model Logout
+
+<h2>Logout</h2>
+
+<div class="container">
+    <form id="logoutForm" asp-action="Logout" asp-controller="Account" method="post">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('logoutForm').submit();
+    </script>
+}
+
